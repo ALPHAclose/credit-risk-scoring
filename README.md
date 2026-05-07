@@ -1,101 +1,139 @@
-#  Credit Risk Scoring Project
+# Credit Risk Scoring Project
 
 ## Overview
 
-This project focuses on building a machine learning model to predict whether a bank customer is likely to default on a loan.
+This project focuses on predicting customer credit risk using machine learning and business intelligence tools.
 
-The goal is to help financial institutions make better lending decisions and reduce financial risk.
+The main objective is to help banks identify high-risk customers and improve loan approval decisions using data-driven analysis.
 
 ---
 
 ## Business Problem
 
-Banks need to decide:
+Banks face significant financial losses when customers fail to repay loans.
 
-> “Should we approve this loan or not?”
+This project aims to answer the following question:
 
-Incorrect decisions can lead to:
+> “Should the bank approve this customer's loan application?”
 
-* Financial losses (if customer defaults)
-* Missed opportunities (rejecting good customers)
-
-This project aims to **identify high-risk customers** using data-driven methods.
+Using customer financial and demographic information, we analyze risk patterns and build a predictive model to identify risky customers.
 
 ---
 
 ## Dataset
 
-* German Credit Dataset
-* Contains information about:
+The project uses the **German Credit Dataset**, which contains customer information such as:
 
-  * Age
-  * Job
-  * Housing
-  * Savings & Checking accounts
-  * Credit amount
-  * Loan duration
-  * Purpose
+* Age
+* Job
+* Housing status
+* Saving accounts
+* Checking accounts
+* Credit amount
+* Loan duration
+* Loan purpose
+* Risk category
 
 ---
 
 ## Data Cleaning
 
+The following preprocessing steps were performed:
+
 * Removed unnecessary index column
-* Handled missing values by introducing `no_account`
+* Handled missing values
 * Standardized column names
-* Created and cleaned target variable (`Risk`)
+* Cleaned and transformed target variable (`Risk`)
+* Prepared data for machine learning pipeline
 
 ---
 
 ## Exploratory Data Analysis (EDA)
 
-Key insights:
+EDA was conducted to identify patterns and relationships between customer attributes and credit risk.
 
-* Longer loan durations are associated with higher risk
-* Customers with low or no savings show higher default probability
-* Renters tend to have higher risk compared to homeowners
-* Higher credit amounts increase default likelihood
+### Key Insights
+
+* Customers with longer loan durations tend to have higher risk levels
+* Low savings are strongly associated with higher default risk
+* Customers who rent homes show higher risk compared to homeowners
+* Larger credit amounts increase financial risk exposure
 
 ---
 
 ## Feature Engineering
 
-Created meaningful features:
+Several new features were created to improve model performance:
 
-* Loan-to-Age ratio
-* Monthly payment (credit amount / duration)
-* Account ownership indicators
-* Housing stability score
+* `Loan_to_Age`
+* `Monthly_Payment`
+* `Has_Savings`
+* `Has_Checking`
+* `Housing_Status`
+
+These features help better represent customer financial behavior and stability.
 
 ---
 
-## Model
+## Machine Learning Model
+
+### Model Used
 
 * Logistic Regression
 
-### Evaluation Metrics:
+### Workflow
+
+* Data preprocessing
+* Feature encoding
+* Train-test split
+* Model training
+* Model evaluation
+
+### Evaluation Metrics
 
 * Precision
 * Recall
 * F1-score
+* Confusion Matrix
 
 ---
 
 ## Key Findings
 
-* Financial pressure (high monthly payments) increases risk
-* Lack of savings is a strong predictor of default
-* Loan duration is one of the most influential factors
+The analysis showed that:
+
+* Long-term loans carry higher risk
+* Customers with little or no savings are more likely to default
+* High monthly payment obligations increase financial pressure
+* Housing stability plays an important role in credit risk assessment
+
+---
+
+## Power BI Dashboard
+
+An interactive Power BI dashboard was developed to visualize customer risk behavior and banking insights.
+
+### Dashboard Features
+
+* Risk distribution analysis
+* Credit amount analysis
+* Housing and savings insights
+* Loan purpose analysis
+* KPI cards for business metrics
+* Interactive filters and slicers
+
+### Dashboard Preview
 
 ---
 
 ## Business Impact
 
-This model can help banks:
+This project can help financial institutions:
 
-* Reduce default risk
-* Improve loan approval decisions
-* Better understand customer risk profiles
+* Reduce loan default risk
+* Improve customer risk assessment
+* Make data-driven lending decisions
+* Better understand customer financial behavior
 
 ---
 
@@ -104,35 +142,59 @@ This model can help banks:
 * Python 3.13
 * pandas
 * numpy
-* seaborn
 * matplotlib
+* seaborn
 * scikit-learn
+* Power BI
+* Git & GitHub
 
 ---
 
 ## Project Structure
 
-```
+```text
 credit-risk-scoring/
 │
 ├── data/
+│   ├── german_credit_data.csv
+│   │
+│   └── processed/
+│       ├── cleaned_data.csv
+│       └── final_data.csv
+│
 ├── notebooks/
 │   ├── 01_eda.ipynb
 │   └── 02_modeling.ipynb
+│
+├── dashboards/
+│   ├── credit_risk_dashboard.pbix
+│   ├── dashboard_main.png
+│   └── risk_analysis.png
+│
 ├── src/
-└── README.md
+│
+├── README.md
+└── .gitkeep
 ```
 
 ---
 
 ## Future Improvements
 
-* Try Random Forest / XGBoost
+Potential future enhancements:
+
+* Random Forest / XGBoost models
 * Hyperparameter tuning
-* Deploy as a web app (Streamlit)
+* Streamlit deployment
+* Real-time prediction system
+* Advanced feature engineering
 
 ---
 
-## Author
+## 👤 Authors
 
-Muhammad Sodiq
+**Muhammad Sodiq**
+**Jasur**
+
+GitHub: https://github.com/ALPHAclose
+GitHub: https://github.com/alphabeastclosef
