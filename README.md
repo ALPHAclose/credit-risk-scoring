@@ -124,7 +124,9 @@ An interactive Power BI dashboard was developed to visualize customer risk behav
 
 ### Dashboard Preview
 
----
+![Dashboard Preview](dashboards/dashboard_main.png)
+
+![Risk Analysis](dashboards/risk_analysis.png)
 
 ## Business Impact
 
